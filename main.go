@@ -25,6 +25,7 @@ func failOnError(err error, msg string) {
 func main() {
 	//create and open file
 	os.Mkdir("/tmp", 0777)
+	err := os.Remove("tmp/stratagem_golang_output.txt")
 	f, err := os.Create("/tmp/stratagem_golang_output.txt")
 	failOnError(err, "Failed to create file")
 	defer f.Close()
